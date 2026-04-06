@@ -6,7 +6,9 @@ import {
   Image,
   StyleSheet,
   Dimensions,
+  TouchableOpacity,
 } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 const { width } = Dimensions.get("window");
 
@@ -35,6 +37,7 @@ const highlights = [
 ];
 
 export default function HomeScreen() {
+  const navigation = useNavigation();
   return (
     <ScrollView style={styles.container}>
       <View style={styles.banner}>
@@ -55,37 +58,52 @@ export default function HomeScreen() {
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>Nossos Passes</Text>
         <View style={styles.passesRow}>
-          <View style={[styles.passCard, { backgroundColor: "#90E0EF" }]}>
+          <TouchableOpacity
+            style={[styles.passCard, { backgroundColor: "#90E0EF" }]}
+            onPress={() => navigation.navigate("Passes")}
+          >
             <Text style={styles.passName}>Básico</Text>
             <Text style={styles.passInfo}>3 atrações</Text>
             <Text style={styles.passInfo}>3 dias</Text>
             <Text style={styles.passPrice}>R$ 89</Text>
-          </View>
-          <View style={[styles.passCard, { backgroundColor: "#00B4D8" }]}>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={[styles.passCard, { backgroundColor: "#00B4D8" }]}
+            onPress={() => navigation.navigate("Passes")}
+          >
             <Text style={styles.passName}>Plus</Text>
             <Text style={styles.passInfo}>5 atrações</Text>
             <Text style={styles.passInfo}>5 dias</Text>
             <Text style={styles.passPrice}>R$ 149</Text>
-          </View>
-          <View style={[styles.passCard, { backgroundColor: "#0077B6" }]}>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={[styles.passCard, { backgroundColor: "#0077B6" }]}
+            onPress={() => navigation.navigate("Passes")}
+          >
             <Text style={[styles.passName, { color: "#fff" }]}>Top</Text>
             <Text style={[styles.passInfo, { color: "#fff" }]}>7 atrações</Text>
             <Text style={[styles.passInfo, { color: "#fff" }]}>7 dias</Text>
             <Text style={[styles.passPrice, { color: "#fff" }]}>R$ 199</Text>
-          </View>
+          </TouchableOpacity>
         </View>
       </View>
 
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>Destaques</Text>
         {highlights.map((item) => (
-          <View key={item.id} style={styles.highlightCard}>
+          <TouchableOpacity
+            key={item.id}
+            style={styles.highlightCard}
+            onPress={() => navigation.navigate("Atrações")}
+          >
             <Image source={{ uri: item.image }} style={styles.highlightImage} />
             <View style={styles.highlightOverlay}>
               <Text style={styles.highlightTitle}>{item.title}</Text>
               <Text style={styles.highlightSubtitle}>{item.subtitle}</Text>
             </View>
-          </View>
+          </TouchableOpacity>
         ))}
       </View>
     </ScrollView>
