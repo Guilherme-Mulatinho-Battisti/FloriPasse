@@ -1,35 +1,41 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
-  View, Text, ScrollView, TouchableOpacity,
-  StyleSheet, Modal, TextInput, Alert
-} from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
-import { useApp } from '../context/AppContext';
+  View,
+  Text,
+  ScrollView,
+  TouchableOpacity,
+  StyleSheet,
+  Modal,
+  TextInput,
+  Alert,
+} from "react-native";
+import { Ionicons } from "@expo/vector-icons";
+import { useApp } from "../context/AppContext";
 
 const PASS_OPTIONS = [
   {
-    type: 'Básico',
+    type: "Básico",
     attractions: 3,
     days: 3,
     price: 89,
-    color: '#90E0EF',
-    textColor: '#023E8A',
+    color: "#90E0EF",
+    textColor: "#023E8A",
   },
   {
-    type: 'Plus',
+    type: "Plus",
     attractions: 5,
     days: 5,
     price: 149,
-    color: '#00B4D8',
-    textColor: '#023E8A',
+    color: "#00B4D8",
+    textColor: "#023E8A",
   },
   {
-    type: 'Top',
+    type: "Top",
     attractions: 7,
     days: 7,
     price: 199,
-    color: '#0077B6',
-    textColor: '#fff',
+    color: "#0077B6",
+    textColor: "#fff",
   },
 ];
 
@@ -37,17 +43,17 @@ export default function PassesScreen() {
   const { passes, addPass } = useApp();
   const [modalVisible, setModalVisible] = useState(false);
   const [selectedPass, setSelectedPass] = useState(null);
-  const [ownerName, setOwnerName] = useState('');
+  const [ownerName, setOwnerName] = useState("");
 
   const handleBuy = (passOption) => {
     setSelectedPass(passOption);
-    setOwnerName('');
+    setOwnerName("");
     setModalVisible(true);
   };
 
   const confirmPurchase = () => {
     if (!ownerName.trim()) {
-      Alert.alert('Atenção', 'Digite o nome do titular do passe.');
+      Alert.alert("Atenção", "Digite o nome do titular do passe.");
       return;
     }
     const today = new Date();
@@ -61,29 +67,36 @@ export default function PassesScreen() {
       days: selectedPass.days,
       price: selectedPass.price,
       owner: ownerName.trim(),
-      purchaseDate: today.toLocaleDateString('pt-BR'),
-      expiryDate: expiry.toLocaleDateString('pt-BR'),
+      purchaseDate: today.toLocaleDateString("pt-BR"),
+      expiryDate: expiry.toLocaleDateString("pt-BR"),
     };
 
     addPass(newPass);
     setModalVisible(false);
-    Alert.alert('Sucesso! 🎉', `Passe ${selectedPass.type} adquirido para ${ownerName.trim()}!`);
+    Alert.alert(
+      "Sucesso!",
+      `Passe ${selectedPass.type} adquirido para ${ownerName.trim()}!`,
+    );
   };
 
   const isExpired = (expiryDate) => {
-    const [day, month, year] = expiryDate.split('/');
+    const [day, month, year] = expiryDate.split("/");
     return new Date(`${year}-${month}-${day}`) < new Date();
   };
 
   return (
     <ScrollView style={styles.container}>
-
       {/* Comprar novo passe */}
       <Text style={styles.sectionTitle}>Adquirir Passe</Text>
       {PASS_OPTIONS.map((option) => (
-        <View key={option.type} style={[styles.passCard, { backgroundColor: option.color }]}>
+        <View
+          key={option.type}
+          style={[styles.passCard, { backgroundColor: option.color }]}
+        >
           <View style={styles.passInfo}>
-            <Text style={[styles.passType, { color: option.textColor }]}>{option.type}</Text>
+            <Text style={[styles.passType, { color: option.textColor }]}>
+              {option.type}
+            </Text>
             <Text style={[styles.passDetail, { color: option.textColor }]}>
               {option.attractions} atrações • {option.days} dias
             </Text>
@@ -95,7 +108,9 @@ export default function PassesScreen() {
             style={[styles.buyBtn, { borderColor: option.textColor }]}
             onPress={() => handleBuy(option)}
           >
-            <Text style={[styles.buyBtnText, { color: option.textColor }]}>Comprar</Text>
+            <Text style={[styles.buyBtnText, { color: option.textColor }]}>
+              Comprar
+            </Text>
           </TouchableOpacity>
         </View>
       ))}
@@ -123,7 +138,9 @@ export default function PassesScreen() {
                   </View>
                 ) : (
                   <View style={[styles.badge, styles.activeBadge]}>
-                    <Text style={[styles.badgeText, { color: '#fff' }]}>Ativo</Text>
+                    <Text style={[styles.badgeText, { color: "#fff" }]}>
+                      Ativo
+                    </Text>
                   </View>
                 )}
               </View>
@@ -131,13 +148,16 @@ export default function PassesScreen() {
                 <Ionicons name="person-outline" size={13} /> {pass.owner}
               </Text>
               <Text style={styles.myPassDetail}>
-                <Ionicons name="map-outline" size={13} /> {pass.attractions} atrações • {pass.days} dias
+                <Ionicons name="map-outline" size={13} /> {pass.attractions}{" "}
+                atrações • {pass.days} dias
               </Text>
               <Text style={styles.myPassDetail}>
-                <Ionicons name="calendar-outline" size={13} /> Comprado em: {pass.purchaseDate}
+                <Ionicons name="calendar-outline" size={13} /> Comprado em:{" "}
+                {pass.purchaseDate}
               </Text>
               <Text style={styles.myPassDetail}>
-                <Ionicons name="time-outline" size={13} /> Válido até: {pass.expiryDate}
+                <Ionicons name="time-outline" size={13} /> Válido até:{" "}
+                {pass.expiryDate}
               </Text>
               <Text style={styles.myPassPrice}>R$ {pass.price}</Text>
             </View>
@@ -158,7 +178,8 @@ export default function PassesScreen() {
             {selectedPass && (
               <>
                 <Text style={styles.modalInfo}>
-                  Passe {selectedPass.type} — {selectedPass.attractions} atrações / {selectedPass.days} dias
+                  Passe {selectedPass.type} — {selectedPass.attractions}{" "}
+                  atrações / {selectedPass.days} dias
                 </Text>
                 <Text style={styles.modalPrice}>R$ {selectedPass.price}</Text>
               </>
@@ -187,7 +208,6 @@ export default function PassesScreen() {
           </View>
         </View>
       </Modal>
-
     </ScrollView>
   );
 }
@@ -195,23 +215,23 @@ export default function PassesScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f0f4f8',
+    backgroundColor: "#f0f4f8",
     padding: 16,
   },
   sectionTitle: {
     fontSize: 20,
-    fontWeight: 'bold',
-    color: '#0077B6',
+    fontWeight: "bold",
+    color: "#0077B6",
     marginBottom: 12,
     marginTop: 8,
   },
   passCard: {
-    flexDirection: 'row',
+    flexDirection: "row",
     borderRadius: 12,
     padding: 16,
     marginBottom: 10,
-    alignItems: 'center',
-    justifyContent: 'space-between',
+    alignItems: "center",
+    justifyContent: "space-between",
     elevation: 2,
   },
   passInfo: {
@@ -219,7 +239,7 @@ const styles = StyleSheet.create({
   },
   passType: {
     fontSize: 18,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
   passDetail: {
     fontSize: 13,
@@ -227,7 +247,7 @@ const styles = StyleSheet.create({
   },
   passPrice: {
     fontSize: 16,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginTop: 4,
   },
   buyBtn: {
@@ -237,20 +257,20 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
   },
   buyBtnText: {
-    fontWeight: 'bold',
+    fontWeight: "bold",
     fontSize: 14,
   },
   empty: {
-    alignItems: 'center',
+    alignItems: "center",
     paddingVertical: 32,
   },
   emptyText: {
-    color: '#aaa',
+    color: "#aaa",
     marginTop: 10,
     fontSize: 15,
   },
   myPassCard: {
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
     borderRadius: 12,
     padding: 14,
     marginBottom: 10,
@@ -260,110 +280,110 @@ const styles = StyleSheet.create({
     opacity: 0.6,
   },
   myPassHeader: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
     marginBottom: 8,
   },
   myPassType: {
     fontSize: 16,
-    fontWeight: 'bold',
-    color: '#023E8A',
+    fontWeight: "bold",
+    color: "#023E8A",
   },
   myPassDetail: {
     fontSize: 13,
-    color: '#555',
+    color: "#555",
     marginBottom: 3,
   },
   myPassPrice: {
     fontSize: 15,
-    fontWeight: 'bold',
-    color: '#0077B6',
+    fontWeight: "bold",
+    color: "#0077B6",
     marginTop: 6,
   },
   badge: {
-    backgroundColor: '#ddd',
+    backgroundColor: "#ddd",
     borderRadius: 6,
     paddingHorizontal: 8,
     paddingVertical: 2,
   },
   activeBadge: {
-    backgroundColor: '#2ecc71',
+    backgroundColor: "#2ecc71",
   },
   badgeText: {
     fontSize: 12,
-    fontWeight: 'bold',
-    color: '#555',
+    fontWeight: "bold",
+    color: "#555",
   },
   modalOverlay: {
     flex: 1,
-    backgroundColor: 'rgba(0,0,0,0.5)',
-    justifyContent: 'center',
-    alignItems: 'center',
+    backgroundColor: "rgba(0,0,0,0.5)",
+    justifyContent: "center",
+    alignItems: "center",
   },
   modalBox: {
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
     borderRadius: 16,
     padding: 24,
-    width: '85%',
+    width: "85%",
     elevation: 5,
   },
   modalTitle: {
     fontSize: 20,
-    fontWeight: 'bold',
-    color: '#023E8A',
+    fontWeight: "bold",
+    color: "#023E8A",
     marginBottom: 12,
-    textAlign: 'center',
+    textAlign: "center",
   },
   modalInfo: {
     fontSize: 14,
-    color: '#555',
-    textAlign: 'center',
+    color: "#555",
+    textAlign: "center",
   },
   modalPrice: {
     fontSize: 22,
-    fontWeight: 'bold',
-    color: '#0077B6',
-    textAlign: 'center',
+    fontWeight: "bold",
+    color: "#0077B6",
+    textAlign: "center",
     marginVertical: 8,
   },
   modalLabel: {
     fontSize: 14,
-    color: '#333',
+    color: "#333",
     marginBottom: 6,
     marginTop: 8,
   },
   input: {
     borderWidth: 1,
-    borderColor: '#ccc',
+    borderColor: "#ccc",
     borderRadius: 8,
     padding: 10,
     fontSize: 14,
     marginBottom: 16,
   },
   modalButtons: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    justifyContent: "space-between",
     gap: 10,
   },
   modalBtn: {
     flex: 1,
     padding: 12,
     borderRadius: 8,
-    alignItems: 'center',
+    alignItems: "center",
   },
   cancelBtn: {
-    backgroundColor: '#eee',
+    backgroundColor: "#eee",
   },
   cancelBtnText: {
-    color: '#555',
-    fontWeight: 'bold',
+    color: "#555",
+    fontWeight: "bold",
   },
   confirmBtn: {
-    backgroundColor: '#0077B6',
+    backgroundColor: "#0077B6",
   },
   confirmBtnText: {
-    color: '#fff',
-    fontWeight: 'bold',
+    color: "#fff",
+    fontWeight: "bold",
   },
 });
