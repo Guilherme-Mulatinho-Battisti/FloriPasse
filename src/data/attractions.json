@@ -1,0 +1,102 @@
+[
+  {
+    "id": "1",
+    "name": "Museu Historico de Santa Catarina",
+    "neighborhood": "Centro",
+    "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Palacio_Cruz_e_Sousa.jpg/320px-Palacio_Cruz_e_Sousa.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Palacio_Cruz_e_Sousa.jpg/640px-Palacio_Cruz_e_Sousa.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Florianopolis_-_SC.jpg/640px-Florianopolis_-_SC.jpg"
+    ],
+    "video": "https://www.youtube.com/watch?v=LXb3EKWsInQ",
+    "description": "O Museu Historico de Santa Catarina fica no Palacio Cruz e Sousa, no centro historico de Florianopolis. Um passeio imperdivel para conhecer a historia do estado.",
+    "hours": "Terca a Sexta: 10h-17h | Sabado e Domingo: 10h-16h",
+    "address": "Praca XV de Novembro, 227 - Centro, Florianopolis",
+    "lat": -27.5965,
+    "lng": -48.5490,
+    "email": "museu@sc.gov.br",
+    "phone": "4832281444",
+    "whatsapp": "48988887777",
+    "hasReservation": false
+  },
+  {
+    "id": "2",
+    "name": "Fortaleza de Sao Jose da Ponta Grossa",
+    "neighborhood": "Jurere",
+    "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Palacio_Cruz_e_Sousa.jpg/320px-Palacio_Cruz_e_Sousa.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Palacio_Cruz_e_Sousa.jpg/640px-Palacio_Cruz_e_Sousa.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Florianopolis_-_SC.jpg/640px-Florianopolis_-_SC.jpg"
+    ],
+    "video": "https://www.youtube.com/watch?v=LXb3EKWsInQ",
+    "description": "Fortaleza do seculo XVIII tombada como patrimonio historico nacional. Vista deslumbrante para o oceano Atlantico e trilhas na mata nativa.",
+    "hours": "Terca a Domingo: 9h-17h",
+    "address": "Rodovia Admar Gonzaga, s/n - Jurere, Florianopolis",
+    "lat": -27.4341,
+    "lng": -48.5298,
+    "email": "fortaleza@iphan.gov.br",
+    "phone": "4832821992",
+    "whatsapp": null,
+    "hasReservation": false
+  },
+  {
+    "id": "3",
+    "name": "Lagoa da Conceicao - Passeio de Escuna",
+    "neighborhood": "Lagoa da Conceicao",
+    "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Florianopolis_Lagoa_da_Conceicao.jpg/320px-Florianopolis_Lagoa_da_Conceicao.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Florianopolis_Lagoa_da_Conceicao.jpg/640px-Florianopolis_Lagoa_da_Conceicao.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Florianopolis_-_SC.jpg/640px-Florianopolis_-_SC.jpg"
+    ],
+    "video": "https://www.youtube.com/watch?v=LXb3EKWsInQ",
+    "description": "Passeio de escuna pela famosa Lagoa da Conceicao, com paradas em praias e pontos turisticos ao longo do percurso. Ideal para toda a familia.",
+    "hours": "Diariamente: 9h-16h (saidas a cada 2h)",
+    "address": "Cais da Lagoa da Conceicao - Lagoa, Florianopolis",
+    "lat": -27.5990,
+    "lng": -48.4610,
+    "email": "escuna@lagoatour.com.br",
+    "phone": "48999991111",
+    "whatsapp": "48999991111",
+    "hasReservation": true
+  },
+  {
+    "id": "4",
+    "name": "Mercado Publico Municipal",
+    "neighborhood": "Centro",
+    "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Florianopolis_-_SC.jpg/320px-Florianopolis_-_SC.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Florianopolis_-_SC.jpg/640px-Florianopolis_-_SC.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Palacio_Cruz_e_Sousa.jpg/640px-Palacio_Cruz_e_Sousa.jpg"
+    ],
+    "video": "https://www.youtube.com/watch?v=LXb3EKWsInQ",
+    "description": "Construido em 1898, o Mercado Publico e um dos pontos mais tradicionais de Florianopolis, com gastronomia tipica, artesanato e muita historia.",
+    "hours": "Segunda a Sexta: 7h-19h | Sabado: 7h-13h",
+    "address": "Rua Conselheiro Mafra, s/n - Centro, Florianopolis",
+    "lat": -27.5948,
+    "lng": -48.5483,
+    "email": "mercado@pmf.sc.gov.br",
+    "phone": "4832290010",
+    "whatsapp": null,
+    "hasReservation": false
+  },
+  {
+    "id": "5",
+    "name": "Trilha da Lagoinha do Leste",
+    "neighborhood": "Pantano do Sul",
+    "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Florianopolis_Lagoa_da_Conceicao.jpg/320px-Florianopolis_Lagoa_da_Conceicao.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Florianopolis_Lagoa_da_Conceicao.jpg/640px-Florianopolis_Lagoa_da_Conceicao.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Florianopolis_-_SC.jpg/640px-Florianopolis_-_SC.jpg"
+    ],
+    "video": "https://www.youtube.com/watch?v=LXb3EKWsInQ",
+    "description": "Uma das trilhas mais bonitas de Florianopolis, levando a uma praia paradisiaca completamente preservada, acessivel apenas a pe.",
+    "hours": "Diariamente: 6h-18h",
+    "address": "Estrada Geral do Pantano do Sul - Pantano do Sul, Florianopolis",
+    "lat": -27.7800,
+    "lng": -48.5100,
+    "email": "trilhas@floripanatura.com.br",
+    "phone": "48988881234",
+    "whatsapp": "48988881234",
+    "hasReservation": true
+  }
+]
