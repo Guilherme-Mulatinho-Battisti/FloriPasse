@@ -17,7 +17,7 @@
     "email": "museu@sc.gov.br",
     "phone": "4832281444",
     "whatsapp": "48988887777",
-    "hasReservation": false
+    "hasReservation": true
   },
   {
     "id": "2",
@@ -37,7 +37,7 @@
     "email": "fortaleza@iphan.gov.br",
     "phone": "4832821992",
     "whatsapp": null,
-    "hasReservation": false
+    "hasReservation": true
   },
   {
     "id": "3",
