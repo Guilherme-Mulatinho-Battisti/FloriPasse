@@ -9,21 +9,21 @@ const { width } = Dimensions.get('window');
 const highlights = [
   {
     id: '1',
-    title: 'Florianópolis te espera!',
-    subtitle: 'Descubra as melhores atrações da Ilha da Magia',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Florianopolis_-_SC.jpg/640px-Florianopolis_-_SC.jpg',
+    title: 'Florianopolis te espera!',
+    subtitle: 'Descubra as melhores atracoes da Ilha da Magia',
+    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600',
   },
   {
     id: '2',
-    title: 'História e Cultura',
-    subtitle: 'Museus, fortalezas e patrimônios históricos',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Palacio_Cruz_e_Sousa.jpg/640px-Palacio_Cruz_e_Sousa.jpg',
+    title: 'Historia e Cultura',
+    subtitle: 'Museus, fortalezas e patrimonios historicos',
+    image: 'https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=600',
   },
   {
     id: '3',
     title: 'Natureza Preservada',
-    subtitle: 'Trilhas, lagoas e praias paradisíacas',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Florianopolis_Lagoa_da_Conceicao.jpg/640px-Florianopolis_Lagoa_da_Conceicao.jpg',
+    subtitle: 'Trilhas, lagoas e praias paradisiacas',
+    image: 'https://images.unsplash.com/photo-1551632811-561732d1e306?w=600',
   },
 ];
 
@@ -33,7 +33,7 @@ export default function HomeScreen() {
       {/* Banner principal */}
       <View style={styles.banner}>
         <Image
-          source={{ uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Florianopolis_-_SC.jpg/640px-Florianopolis_-_SC.jpg' }}
+          source={{ uri: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800' }}
           style={styles.bannerImage}
         />
         <View style={styles.bannerOverlay}>
